@@ -5,6 +5,7 @@ import Wrapper from './components/Wrapper';
 import characters from './cards.json';
 import logo from './logo.svg';
 import './App.css';
+import { matcherErrorMessage } from 'jest-matcher-utils';
 
 let correctGuesses = 0;
 let topScore = 0;
@@ -25,9 +26,9 @@ class App extends Component {
     const characters = this.state.characters;
 
     // filter for card clicked on
-    const choosenCard = characters.filter(match => match.id === id);
+    const chosenCard = characters.filter(match => match.id === id);
 
-    if (choosenCard[0].clicked) {
+    if (chosenCard[0].clicked) {
 
       console.log("Correct Guesses: " + correctGuesses);
       console.log("Top Score: " + topScore);
@@ -45,6 +46,21 @@ class App extends Component {
       // 
     } else if (correctGuesses < 11) {
 
+      // set value to true
+      chosenCard[0].clicked = true;
+
+      // counter
+      correctGuesses++;
+
+      message = "Good Guess! Keep guessing!"
+
+      If(correctGuesses > topScore) {
+        topScore = correctGuesses;
+        this.setState({ topScore });
+      }
+
+      // randomize the card order
+      matches.sort(function (a, b) { return 0.5 - Math.random() });
     }
   }
 }
