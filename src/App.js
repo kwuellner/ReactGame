@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Card from './components/Cards';
+import Cards from './components/Cards';
 import Head from './components/Head';
 import Wrapper from './components/Wrapper';
 import characters from './cards.json';
@@ -109,7 +109,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             {this.state.characters.map(character => (
-              <Card
+              <Cards
                 setClicked={this.setClicked}
                 id={character.id}
                 key={character.id}
