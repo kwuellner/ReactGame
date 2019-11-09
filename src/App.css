@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -19,4 +19,21 @@
 
 .App-link {
   color: #09d3ac;
+} */
+
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.scoreSummary {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.row {
+  margin: 30px; 
 }
